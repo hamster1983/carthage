@@ -49,7 +49,27 @@ $(document).ready(function(){
     else {
       $('.main-detail').removeClass('active');
     }
-  })
+  });
+
+  
+  //continents & countries on the main page
+  $('.country span').on('click',function(){
+    $('.country-links').removeClass('active');
+    $(this).next('.country-links').addClass('active');
+  });
+
+  $('.country .arr-back').on('click',function(){
+    $('.country-links').removeClass('active');
+  });
+
+  $('.continents-countries > li > .arr-back').on('click',function(){
+    $('.continents-countries').removeClass('active')
+  });
+
+  $('.africa-cover h2').on('click',function(){
+    $('.africa-countries').addClass('active');
+  });
+
 
 
   $('.top-slider').slick({
