@@ -6,7 +6,7 @@
 	box-sizing: border-box;
 }
 html, body {
-	/*overflow-x: hidden;*/
+	overflow-x: hidden;
 }
 body {
 	font-family: NotoSans, sans-serif;
@@ -380,13 +380,16 @@ main {
 	width: 100%;
 }
 
-
-
+.news,
+.articles {
+	margin-bottom: 60px;
+}
 .news [type="radio"],
 .articles [type="radio"] {
 	display: none;
 }
-.news-head {
+.news-head,
+.art-head {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
@@ -394,7 +397,8 @@ main {
 	margin-bottom: 20px;
 	border-bottom: 1px solid #1D2D3A;
 }
-.news h2 {
+.news h2,
+.articles h2 {
 	font-size: 52px;
 	line-height: 70px;
 	margin: 0 30px 0 0;
@@ -412,7 +416,6 @@ main {
 	line-height: 32px;
 	cursor: pointer;
 }
-
 #news-actual:checked ~ .news-head label[for="news-actual"],
 #news-tunis:checked ~ .news-head label[for="news-tunis"],
 #news-tanzania:checked ~ .news-head label[for="news-tanzania"],
@@ -425,7 +428,6 @@ main {
 #art-egipet:checked ~ .art-head label[for="art-egipet"] {
 	color: #0ED6C8;
 }
-
 .news-wrap {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
@@ -469,7 +471,8 @@ main {
 .big-news {
 	padding: 95px 30px 15px;
 }
-.big-news .news-tag {
+.big-news .news-tag,
+.big-art .art-tag {
 	display: inline-block;
 	text-transform: uppercase;
 	font-size: 28px;
@@ -483,17 +486,20 @@ main {
 	line-height: 35px;
 	margin: 15px 0;
 }
-.big-news .news-date {
+.big-news .news-date,
+.big-art .art-date {
 	font-size: 24px;
 	line-height: 32px;
 }
-.big-news .news-eye {
+.big-news .news-eye,
+.big-art .art-eye {
 	display: flex;
 	float: right;
 	font-size: 24px;
 	line-height: 32px;
 }
-.big-news .news-eye img {
+.big-news .news-eye img,
+.big-art .art-eye img {
 	margin-right: 10px;
 	display: block;
 }
@@ -527,6 +533,25 @@ main {
 .small-news .news-eye img {
 	margin-right: 7px;
 	display: block;
+}
+.more-news,
+.more-art {
+	font-size: 20px;
+	line-height: 21px;
+	float: right;
+	color: #1D2D3A;
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	padding-top: 20px;
+}
+.more-news:hover,
+.more-art:hover {
+	text-decoration: underline;
+}
+.more-news img,
+.more-art img {
+	margin-left: 15px;
 }
 @media (max-width: 1199px) {
 	.news h2 {
@@ -593,5 +618,258 @@ main {
 	.small-news .news-eye img {
 		width: 16px;
 		margin-right: 2px;
+	}
+}
+
+.experts {
+	margin-bottom: 60px;
+}
+.experts h2 {
+	font-size: 52px;
+	line-height: 70px;
+	margin: 0 30px 0 0;
+}
+.experts-wrap {
+	display: flex;
+	justify-content: space-between;
+	padding: 20px 0;
+	gap: 20px;
+	overflow: auto;
+}
+.experts-item {
+	width: 170px;
+	flex-shrink: 0;
+	text-align: center;
+}
+.experts-item img {
+	max-width: 100%;
+}
+.experts-name {
+	font-size: 24px;
+	line-height: 28px;
+	margin: 10px 0 5px;
+}
+
+.art-banner-wrap,
+.art-wrap {
+	display: flex;
+	justify-content: space-between;
+}
+.art-wrap {
+	width: 1080px;
+}
+.big-art {
+	padding: 30px;
+	background-size: cover;
+	background-position: 50% 50%;
+	background-image: url('../img/fest.jpg');
+	display: flex;
+	width: 490px;
+	color: #fff;
+}
+.big-art-content {
+	margin-top: auto;
+}
+.big-art a {
+	color: #fff;
+	text-decoration: none;
+}
+.big-art a:hover {
+	text-decoration: underline;
+}
+.big-art h3 {
+	margin: 15px 0;
+	font-size: 24px;
+	line-height: 28px;
+	font-weight: bold;
+}
+.small-art-wrap {
+	width: 570px;
+}
+.small-art {
+	display: flex;
+	margin-bottom: 20px;
+}
+.small-art-pic {
+	display: block;
+	flex-shrink: 0;
+	width: 200px;
+	height: 175px;
+	border-radius: 5px;
+	overflow: hidden;
+	background-size: cover;
+	background-position: 50% 50%;
+	background-image: url('../img/reis.jpg');
+	margin-right: 15px;
+}
+.small-art-content {
+	display: flex;
+	flex-direction: column;
+}
+.small-art h4 {
+	margin: 0 0 10px;
+}
+.small-art h4 a {
+	color: #1D2D3A;
+	text-decoration: none;
+}
+.small-art h4 a:hover,
+.small-art-excerpt a:hover{
+	text-decoration: underline;
+}
+.small-art-excerpt {
+	font-size: 16px;
+	line-height: 20px;
+}
+.small-art-excerpt a {
+	text-decoration: none;
+	color: #000;
+	font-weight: bold;
+}
+.small-art-date {
+	color: #465664;
+	margin-top: auto;
+	padding-top: 10px;
+}
+.more-art {
+	padding-top: 10px;
+}
+.art-banner {
+	display: block;
+}
+
+footer {
+	margin-top: 60px;
+	background-color: #0B0B27;
+}
+footer .container {
+	padding: 50px 160px 50px 60px;
+	display: flex;
+	justify-content: space-between;
+}
+.foot-left {
+	width: 270px;
+}
+.foot-soc {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 25px 0 60px;
+}
+.foot-address {
+	color: #7B7B90;
+	font-size: 16px;
+	line-height: 20px;
+}
+.foot-right {
+	width: 700px;
+}
+.foot-subscription-title {
+	color: #fff;
+}
+.foot-subscription-form {
+	padding: 40px 0 55px;
+}
+.foot-subscription-form form {
+	display: flex;
+	justify-content: space-between;
+}
+.foot-subscription-form [type="email"] {
+	width: 62%;
+	border: 2px solid #fff;
+	border-radius: 3px;
+	padding: 20px;
+	background-color: transparent;
+	color: #fff;
+}
+.foot-subscription-form [type="email"]::placeholder {
+	color: #989898;
+}
+.foot-subscription-form [type="submit"] {
+	width: 36%;
+	background-color: #fff;
+	border: 1px solid #fff;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: .2s;
+	color: #0B0B27;
+	font-size: 28px;
+	line-height: 36px;
+	font-weight: bold;
+}
+.foot-subscription-form [type="submit"]:hover {
+	box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.45);
+}
+.foot-subscription-form [type="submit"]:active {
+	color: #fff;
+	background-color: transparent;
+}
+.foot-contacts-menu {
+	display: flex;
+	justify-content: space-between;
+}
+.foot-contacts {
+	color: #7B7B90;
+	width: 285px;
+	padding-right: 20px;
+}
+.foot-contacts a {
+	text-decoration: none;
+	color: #7B7B90;
+	font-size: 16px;
+	line-height: 21px;
+	display: block;
+	padding: 2px 0;
+}
+.foot-contacts a:hover {
+	text-decoration: underline;
+}
+.foot-contacts h5 {
+	color: #fff;
+	font-size: 16px;
+	line-height: 21px;
+	font-weight: bold;
+	margin: 0 0 10px;
+}
+.foot-contacts-person {
+	font-size: 10px;
+	line-height: 14px;
+	padding-top: 25px;
+}
+.foot-contacts-menu ul {
+	list-style: none;
+	margin: 0;
+	padding: 0 50px 0 0;
+}
+.foot-contacts-menu li {
+	padding-bottom: 15px;
+}
+.foot-contacts-menu a {
+	text-decoration: none;
+	font-size: 16px;
+	line-height: 21px;
+}
+.foot-contacts-menu a:hover {
+	text-decoration: underline;
+}
+.foot-menu a {
+	position: relative;
+	color: #7B7B90;
+}
+.foot-menu a.active {
+	color: #fff;
+}
+.foot-menu a.active:before {
+	content: url('../img/arr-white.svg');
+	position: absolute;
+	left: -18px;
+	top: -1px;
+}
+.foot-countries a {
+	color: #fff;
+}
+@media (max-width: 1400px) {
+	footer .container {
+		padding: 50px 60px;
 	}
 }
