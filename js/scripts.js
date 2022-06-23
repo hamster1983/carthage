@@ -71,6 +71,24 @@ $(document).ready(function(){
   });
 
 
+  //video in popup
+  $('.video-wrap').on('click', function(){
+    let link = $(this).attr('data-link');
+    $('.video-popup iframe').attr('src','https://www.youtube.com/embed/'+link+'?autoplay=1');
+    $('.video-popup').addClass('visible');
+  });
+  $('.video-popup-close').on('click', function(){
+    $('.video-popup').removeClass('visible');
+    $('.video-popup iframe').attr('src','');
+  });
+  $('.video-popup').on('click', function(e){
+    if(e.target == this) {
+      $(this).removeClass('visible');
+      $(this).find('iframe').attr('src','');
+    }
+  });
+
+
 
   $('.top-slider').slick({
     slidesToShow: 1,
