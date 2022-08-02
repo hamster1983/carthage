@@ -140,6 +140,17 @@ $(document).ready(function(){
     ]
   });
 
+
+  $(document).on('click', function(e){
+    let mapCloseElem = e.target;
+    if($(mapCloseElem).parents().hasClass('country-resorts') || $(mapCloseElem).hasClass('country-resorts')) {
+      return;
+    }
+    else {
+      $('#res-main').prop('checked',true);
+    }
+  })
+
   
 
 });

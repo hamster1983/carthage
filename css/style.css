@@ -14,6 +14,9 @@ body {
 	font-size: 18px;
 	line-height: 24px;
 }
+img {
+	max-width: inherit;
+}
 p {
 	margin: 10px 0;
 }
@@ -611,11 +614,13 @@ main {
 	padding-bottom: 20px;
 }
 .news [type="radio"],
-.articles [type="radio"] {
+.articles [type="radio"],
+.comments [type="radio"] {
 	display: none;
 }
 .news-head,
-.art-head {
+.art-head,
+.com-head {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
@@ -624,13 +629,15 @@ main {
 	border-bottom: 1px solid #1D2D3A;
 }
 .news h2,
-.articles h2 {
+.articles h2,
+.comments h2 {
 	font-size: 52px;
 	line-height: 70px;
 	margin: 0 30px 0 0;
 }
 .news-label-wrap,
-.art-label-wrap {
+.art-label-wrap,
+.com-label-wrap {
 	display: flex;
 	gap: 90px;
 	overflow: auto;
@@ -654,13 +661,48 @@ main {
 #art-tanzania:checked ~ .art-head label[for="art-tanzania"],
 #art-oae:checked ~ .art-head label[for="art-oae"],
 #art-egipet:checked ~ .art-head label[for="art-egipet"],
-#art-world:checked ~ .art-head label[for="art-world"] {
+#art-world:checked ~ .art-head label[for="art-world"],
+#com-actual:checked ~ .com-head label[for="com-actual"],
+#com-tunis:checked ~ .com-head label[for="com-tunis"],
+#com-tanzania:checked ~ .com-head label[for="com-tanzania"],
+#com-oae:checked ~ .com-head label[for="com-oae"],
+#com-egipet:checked ~ .com-head label[for="com-egipet"],
+#com-world:checked ~ .com-head label[for="com-world"] {
 	color: #0ED6C8;
 }
-.news-wrap {
+#news-actual:checked ~ .news-wrap.news-actual,
+#news-tunis:checked ~ .news-wrap.news-tunis,
+#news-oae:checked ~ .news-wrap.news-oae,
+#news-tanzania:checked ~ .news-wrap.news-tanzania,
+#news-egipet:checked ~ .news-wrap.news-egipet,
+#news-world:checked ~ .news-wrap.news-world {
 	display: grid;
+	animation: opacity .5s forwards;
+}
+#art-actual:checked ~ .art-wrap.art-actual,
+#art-tunis:checked ~ .art-wrap.art-tunis,
+#art-oae:checked ~ .art-wrap.art-oae,
+#art-tanzania:checked ~ .art-wrap.art-tanzania,
+#art-egipet:checked ~ .art-wrap.art-egipet,
+#art-world:checked ~ .art-wrap.art-world,
+#com-actual:checked ~ .com-wrap.art-actual,
+#com-tunis:checked ~ .com-wrap.art-tunis,
+#com-oae:checked ~ .com-wrap.art-oae,
+#com-tanzania:checked ~ .com-wrap.art-tanzania,
+#com-egipet:checked ~ .com-wrap.art-egipet,
+#com-world:checked ~ .com-wrap.art-world {
+	display: flex;
+	animation: opacity .5s forwards;
+}
+@keyframes opacity {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+.news-wrap {
+	display: none;
+	opacity: 0;
 	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: 2;
+	grid-template-rows: repeat(2, auto);
 	gap: 20px;
 }
 .news-wrap > div {
@@ -699,6 +741,7 @@ main {
 }
 .big-news {
 	padding: 95px 30px 15px;
+	position: relative;
 }
 .big-news .news-tag,
 .big-art .art-tag {
@@ -709,16 +752,19 @@ main {
 	background-color: #06C4E5;
 	border-radius: 10px;
 	padding: 3px 12px;
+	position: relative;
 }
 .big-news h3 {
 	font-size: 30px;
 	line-height: 35px;
 	margin: 15px 0;
+	position: relative;
 }
 .big-news .news-date,
 .big-art .art-date {
 	font-size: 24px;
 	line-height: 32px;
+	position: relative;
 }
 .big-news .news-eye,
 .big-art .art-eye,
@@ -736,6 +782,7 @@ main {
 }
 .small-news {
 	padding: 175px 15px 15px;
+	position: relative;
 }
 .small-news .news-tag {
 	display: inline-block;
@@ -745,15 +792,18 @@ main {
 	background-color: #06C4E5;
 	border-radius: 5px;
 	padding: 3px 10px;
+	position: relative;
 }
 .small-news h3 {
 	font-size: 18px;
 	line-height: 24px;
 	margin: 15px 0;
+	position: relative;
 }
 .small-news .news-date {
 	font-size: 20px;
 	line-height: 26px;
+	position: relative;
 }
 .small-news .news-eye {
 	display: flex;
@@ -783,9 +833,21 @@ main {
 .more-art img {
 	margin-left: 15px;
 }
+.big-news:before,
+.small-news:before {
+	content: '';
+	position: absolute;
+	display: block;
+	background-color: rgba(0,0,0,0.5);
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
 @media (max-width: 1199px) {
 	.news h2,
-	.articles h2 {
+	.articles h2,
+	.comments h2 {
 		font-size: 40px;
 		line-height: 50px;
 	}
@@ -854,7 +916,7 @@ main {
 @media (max-width: 650px) {
 	.news-wrap {
 		grid-template-columns: repeat(2, 1fr);
-		grid-template-rows: 3;
+		grid-template-rows: repeat(3, auto);
 	}
 	.news-wrap > div:first-child {
 		grid-column: 1 / 2;
@@ -926,12 +988,12 @@ main {
 .articles {
 	padding-bottom: 60px;
 }
-.art-banner-wrap,
-.art-wrap {
+.art-banner-wrap {
 	display: flex;
 	justify-content: space-between;
 }
 .art-wrap {
+	display: none;
 	width: 1080px;
 }
 .big-art,
@@ -1091,7 +1153,7 @@ footer .container {
 	justify-content: space-between;
 	align-items: center;
 	margin: 25px 0 60px;
-	width: 270px;
+	width: 230px;
 }
 .foot-address {
 	color: #7B7B90;
@@ -1395,14 +1457,17 @@ footer .container {
 	width: 100%;
 }
 .life-news .news-label-wrap,
-.life-art .art-label-wrap {
+.life-art .art-label-wrap,
+.com-label-wrap {
 	gap: 50px;
 }
 .life-news .news-label-wrap label,
-.life-art .art-label-wrap label {
+.life-art .art-label-wrap label,
+.com-label-wrap label {
 	font-size: 18px;
 	line-height: 24px;
 	font-weight: bold;
+	cursor: pointer;
 }
 .life-news-wrap,
 .life-art-wrap {
@@ -1470,7 +1535,7 @@ footer .container {
 .life-video h2 {
 	font-size: 52px;
 	line-height: 70px;
-	margin: 0 0 25px;
+	margin: 0 0 20px;
 }
 .life-video .video-wrap img,
 .life-banner img {
@@ -1759,7 +1824,7 @@ footer .container {
 	border-bottom: 1px solid #1D2D3A;
 	font-size: 52px;
 	line-height: 70px;
-	margin: 0 0 30px;
+	margin: 0 0 20px;
 }
 .most-read-big {
 	width: 32%;
@@ -1946,4 +2011,516 @@ footer .container {
 .all-news-date {
 	font-size: 24px;
 	line-height: 32px;
+}
+@media (max-width: 1199px) {
+	.all-news-label-wrap label,
+	.all-news-tag {
+		font-size: 18px;
+		line-height: 24px;
+		padding: 2px 10px;
+		border-radius: 5px;
+	}
+	.all-news-wrap {
+		padding-top: 15px;
+	}
+	.all-news-tag {
+		margin: 0 0 15px 15px;
+	}
+	.all-news-item h4 {
+		font-size: 20px;
+		line-height: 26px;
+		margin: 5px 0 10px;
+	}
+	.all-news-date {
+		font-size: 18px;
+		line-height: 24px;
+	}
+}
+@media (max-width: 650px) {
+	.all-news-wrap {
+		gap: 2%;
+	}
+	.all-news-item {
+		width: 49%;
+		margin-bottom: 25px;
+	}
+}
+@media (max-width: 480px) {
+	.all-news-label-wrap {
+		gap: 15px;
+		padding: 10px 0;
+	}
+	.all-news-label-wrap label,
+	.all-news-tag {
+		font-size: 14px;
+		line-height: 18px;
+		padding: 2px 8px;
+		border-radius: 5px;
+	}
+	.all-news-item h4 {
+		font-size: 16px;
+		line-height: 20px;
+		margin: 2px 0 5px;
+	}
+	.all-news-date {
+		font-size: 14px;
+		line-height: 18px;
+	}
+}
+
+.comments {
+	padding-bottom: 60px;
+}
+.comments-wrap {
+	display: flex;
+	justify-content: space-between;
+}
+.comments-item {
+	border: 1px solid #D8D8D8;
+	border-radius: 5px;
+	padding: 20px;
+	width: 31.5%;
+}
+.comments-item-head {
+	display: flex;
+	align-items: center;
+	padding-bottom: 20px;
+}
+.comments-pic {
+	display: block;
+	width: 75px;
+	margin-right: 25px;
+	flex-shrink: 0;
+	align-self: center;
+}
+.comments-item h3 {
+	font-size: 24px;
+	line-height: 32px;
+	margin: 0;
+}
+.comments-excerpt,
+.comments-date {
+	font-size: 16px;
+	line-height: 22px;
+}
+.comments-item h3 a,
+.comments-excerpt a {
+	color: #1D2D3A;
+	text-decoration: none;
+	font-weight: bold;
+}
+.comments-item h3 a:hover,
+.comments-excerpt a:hover {
+	text-decoration: underline;
+}
+.comments-date {
+	padding: 15px 0 10px;
+}
+@media (max-width: 1199px) {
+	.comments-item {
+		width: 32%;
+	}
+	.comments-item h3 {
+		font-size: 18px;
+		line-height: 22px;
+	}
+	.comments-excerpt,
+	.comments-date {
+		font-size: 14px;
+		line-height: 18px;
+	}
+}
+@media (max-width: 991px) {
+	.comments-item-head {
+		flex-wrap: wrap;
+		flex-direction: column;
+	}
+	.comments-pic {
+		margin: 0 0 10px 0;
+		width: 130px;
+	}
+}
+@media (max-width: 600px) {
+	.comments-wrap {
+		flex-wrap: wrap;
+	}
+	.comments-item {
+		width: 100%;
+	}
+	.comments-item:not(:last-child) {
+		margin-bottom: 20px;
+	}
+	.comments-item-pic {
+		width: auto;
+		max-width: 100%;
+	}
+}
+
+/* countries about */
+.country-title-h1 {
+	font-size: 52px;
+	line-height: 70px;
+}
+.country-title-h2 {
+	font-size: 40px;
+	line-height: 50px;
+	border-bottom: 1px solid #1D2D3A;
+	padding: 5px 0;
+}
+.country-nav {
+	display: flex;
+	justify-content: space-between;
+	padding: 15px 35px;
+	border: 1px solid #0ED6C8;
+	border-radius: 5px;
+	overflow-x: auto;
+}
+.country-nav a {
+	color: #1D2D3A;
+	text-decoration: none;
+	font-size: 24px;
+	line-height: 32px;
+	margin: 0 15px;
+	white-space: nowrap;
+}
+.country-nav a:hover {
+	text-decoration: underline;
+}
+.country-about {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 50px 0;
+}
+.country-about-text,
+.country-about-pic {
+	width: 49%;
+}
+.country-about-text p,
+#resorts p {
+	margin: 20px 0;
+}
+.country-about-pic img {
+	max-width: 100%;
+	display: block;
+	margin: 0 auto;
+}
+@media (max-width: 1199px) {
+	.country-nav {
+		padding: 15px;
+	}
+	.country-nav a {
+		font-size: 18px;
+		line-height: 24px;
+	}
+	.country-about-text p {
+		font-size: 14px;
+		line-height: 18px;
+	}
+}
+@media (max-width: 800px) {
+	.country-about {
+		flex-wrap: wrap;
+		padding: 30px 0;
+	}
+	.country-about-text,
+	.country-about-pic {
+		width: 100%;
+	}
+}
+
+/* resorts */
+#resorts input {
+	display: none;
+}
+.resorts-content {
+	display: flex;
+	align-items: center;
+	padding-top: 20px;
+}
+.resorts-label-wrap {
+	position: relative;
+	width: 365px;
+	flex-shrink: 0;
+}
+.resorts-label-wrap img {
+	display: block;
+	margin: 0 auto;
+}
+.resorts-label-wrap label {
+	cursor: pointer;
+	font-size: 10px;
+	line-height: 13px;
+	position: absolute;
+	transition: .1s;
+}
+.resorts-label-wrap label:hover {
+	color: #0ED6C8;
+}
+#res-bizerta:checked ~ .resorts-content label[for="res-bizerta"],
+#res-tabarka:checked ~ .resorts-content label[for="res-tabarka"],
+#res-gammart:checked ~ .resorts-content label[for="res-gammart"],
+#res-tunis:checked ~ .resorts-content label[for="res-tunis"],
+#res-nabeul:checked ~ .resorts-content label[for="res-nabeul"],
+#res-hammamet:checked ~ .resorts-content label[for="res-hammamet"],
+#res-enfida:checked ~ .resorts-content label[for="res-enfida"],
+#res-sousse:checked ~ .resorts-content label[for="res-sousse"],
+#res-monastir:checked ~ .resorts-content label[for="res-monastir"],
+#res-mahdia:checked ~ .resorts-content label[for="res-mahdia"],
+#res-djerba:checked ~ .resorts-content label[for="res-djerba"],
+#res-tozer:checked ~ .resorts-content label[for="res-tozer"],
+#res-duz:checked ~ .resorts-content label[for="res-duz"] {
+	color: #0ED6C8;
+	font-size: 14px;
+	line-height: 19px;
+	font-weight: bold;
+}
+.resorts-label-wrap label[for="res-bizerta"] {
+	top: -13px;
+	left: 170px;
+}
+#res-bizerta:checked ~ .resorts-content label[for="res-bizerta"] {
+	top: -20px;
+	left: 160px;
+}
+.resorts-label-wrap label[for="res-tabarka"] {
+	top: 15px;
+	left: 100px;
+}
+#res-tabarka:checked ~ .resorts-content label[for="res-tabarka"] {
+	top: 10px;
+	left: 90px;
+}
+.resorts-label-wrap label[for="res-gammart"] {
+	top: 17px;
+	left: 230px;
+}
+#res-gammart:checked ~ .resorts-content label[for="res-gammart"] {
+	top: 10px;
+	left: 220px;
+}
+.resorts-label-wrap label[for="res-tunis"] {
+	top: 32px;
+	left: 195px;
+}
+#res-tunis:checked ~ .resorts-content label[for="res-tunis"] {
+	top: 25px;
+	left: 185px;
+}
+.resorts-label-wrap label[for="res-nabeul"] {
+	top: 62px;
+	right: 60px;
+}
+#res-nabeul:checked ~ .resorts-content label[for="res-nabeul"] {
+	top: 58px;
+	right: 45px;
+}
+.resorts-label-wrap label[for="res-hammamet"] {
+	top: 75px;
+	right: 60px;
+}
+#res-hammamet:checked ~ .resorts-content label[for="res-hammamet"] {
+	top: 72px;
+	right: 39px;
+}
+.resorts-label-wrap label[for="res-enfida"] {
+	top: 93px;
+	right: 80px;
+}
+#res-enfida:checked ~ .resorts-content label[for="res-enfida"] {
+	top: 90px;
+	right: 64px;
+}
+.resorts-label-wrap label[for="res-sousse"] {
+	top: 112px;
+	right: 90px;
+}
+#res-sousse:checked ~ .resorts-content label[for="res-sousse"] {
+	top: 108px;
+	right: 83px;
+}
+.resorts-label-wrap label[for="res-monastir"] {
+	top: 125px;
+	right: 40px;
+}
+#res-monastir:checked ~ .resorts-content label[for="res-monastir"] {
+	top: 120px;
+	right: 18px;
+}
+.resorts-label-wrap label[for="res-mahdia"] {
+	top: 155px;
+	right: 42px;
+}
+#res-mahdia:checked ~ .resorts-content label[for="res-mahdia"] {
+	top: 150px;
+	right: 27px;
+}
+.resorts-label-wrap label[for="res-djerba"] {
+	top: 262px;
+	right: 60px;
+}
+#res-djerba:checked ~ .resorts-content label[for="res-djerba"] {
+	top: 256px;
+	right: 45px;
+}
+.resorts-label-wrap label[for="res-tozer"] {
+	top: 255px;
+	left: 75px;
+}
+#res-tozer:checked ~ .resorts-content label[for="res-tozer"] {
+	top: 250px;
+	left: 67px;
+}
+.resorts-label-wrap label[for="res-duz"] {
+	top: 287px;
+	left: 138px;
+}
+#res-duz:checked ~ .resorts-content label[for="res-duz"] {
+	top: 282px;
+	left: 130px;
+}
+#res-main:checked ~ .resorts-content .resorts-text-main,
+#res-bizerta:checked ~ .resorts-content .resorts-text-bizerta,
+#res-tabarka:checked ~ .resorts-content .resorts-text-tabarka,
+#res-gammart:checked ~ .resorts-content .resorts-text-gammart,
+#res-tunis:checked ~ .resorts-content .resorts-text-tunis,
+#res-nabeul:checked ~ .resorts-content .resorts-text-nabeul,
+#res-hammamet:checked ~ .resorts-content .resorts-text-hammamet,
+#res-enfida:checked ~ .resorts-content .resorts-text-enfida,
+#res-sousse:checked ~ .resorts-content .resorts-text-sousse,
+#res-monastir:checked ~ .resorts-content .resorts-text-monastir,
+#res-mahdia:checked ~ .resorts-content .resorts-text-mahdia,
+#res-djerba:checked ~ .resorts-content .resorts-text-djerba,
+#res-tozer:checked ~ .resorts-content .resorts-text-tozer,
+#res-duz:checked ~ .resorts-content .resorts-text-duz {
+	display: block;
+	animation: opacity 1s linear forwards;
+}
+@keyframes opacity {
+	form { opacity: 0; }
+	to { opacity: 1; }
+}
+.resorts-text {
+	padding: 0 80px;
+}
+.resorts-text h3 {
+	font-size: 24px;
+	line-height: 31px;
+	font-weight: bold;
+	margin-bottom: 30px;
+}
+.resorts-text-item {
+	opacity: 0;
+	display: none;
+}
+@media (max-width: 1199px) {
+	#resorts p {
+		font-size: 14px;
+		line-height: 18px;
+	}
+	.resorts-text {
+		padding: 0;
+	}
+}
+@media (max-width: 700px) {
+	.resorts-content {
+		flex-wrap: wrap;
+	}
+	.resorts-label-wrap {
+		margin: 0 auto 20px;
+	}
+}
+@media (max-width: 380px) {
+	.resorts-label-wrap {
+		left: -40px;
+	}
+}
+#recommend {
+	padding: 50px 0;
+}
+.recommend-wrap {
+	display: flex;
+	justify-content: space-between;
+}
+.recommend-item {
+	display: block;
+	width: 24%;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #1D2D3A;
+	transition: .2s;
+}
+.recommend-item:hover {
+	opacity: .6;
+}
+.recommend-item img {
+	width: 100%;
+}
+.recommend-title {
+	font-size: 20px;
+	line-height: 24px;
+	margin-top: 10px;
+}
+.recommend-place {
+	display: flex;
+	align-items: center;
+	font-size: 14px;
+	line-height: 16px;
+}
+.recommend-place img {
+	width: 14px;
+	margin-right: 10px;
+}
+@media (max-width: 1199px) {
+	.recommend-title {
+		font-size: 16px;
+		line-height: 20px;
+		margin-bottom: 15px;
+	}
+}
+@media (max-width: 700px) {
+	#recommend {
+		padding: 30px 0;
+	}
+}
+@media (max-width: 600px) {
+	.recommend-wrap {
+		flex-wrap: wrap;
+	}
+	.recommend-item {
+		width: 49%;
+		margin-bottom: 25px;
+	}
+	.recommend-title {
+		font-size: 14px;
+		line-height: 18px;
+		margin: 5px 0 10px;
+	}
+}
+
+#must-see p {
+	margin: 20px 0;
+}
+.must-see-pic {
+	display: flex;
+	justify-content: space-between;
+}
+.must-see-pic img {
+	display: block;
+	width: 49.2%;
+	margin-bottom: 20px;
+}
+@media (max-width: 1199px) {
+	#must-see p {
+		font-size: 14px;
+		line-height: 18px;
+	}
+}
+@media (max-width: 600px) {
+	.must-see-pic {
+		flex-wrap: wrap;
+	}
+	.must-see-pic img {
+		width: 100%;
+	}
 }
