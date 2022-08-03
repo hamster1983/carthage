@@ -679,12 +679,12 @@ main {
 	display: grid;
 	animation: opacity .5s forwards;
 }
-#art-actual:checked ~ .art-wrap.art-actual,
-#art-tunis:checked ~ .art-wrap.art-tunis,
-#art-oae:checked ~ .art-wrap.art-oae,
-#art-tanzania:checked ~ .art-wrap.art-tanzania,
-#art-egipet:checked ~ .art-wrap.art-egipet,
-#art-world:checked ~ .art-wrap.art-world,
+#art-actual:checked ~ .art-banner-wrap .art-wrap.art-actual,
+#art-tunis:checked ~ .art-banner-wrap .art-wrap.art-tunis,
+#art-oae:checked ~ .art-banner-wrap .art-wrap.art-oae,
+#art-tanzania:checked ~ .art-banner-wrap .art-wrap.art-tanzania,
+#art-egipet:checked ~ .art-banner-wrap .art-wrap.art-egipet,
+#art-world:checked ~ .art-banner-wrap .art-wrap.art-world,
 #com-actual:checked ~ .com-wrap.art-actual,
 #com-tunis:checked ~ .com-wrap.art-tunis,
 #com-oae:checked ~ .com-wrap.art-oae,
@@ -692,6 +692,7 @@ main {
 #com-egipet:checked ~ .com-wrap.art-egipet,
 #com-world:checked ~ .com-wrap.art-world {
 	display: flex;
+	justify-content: space-between;
 	animation: opacity .5s forwards;
 }
 @keyframes opacity {
@@ -2156,7 +2157,16 @@ footer .container {
 	}
 }
 
-/* countries about */
+/* countries */
+.country-block {
+	padding-top: 30px;
+}
+@media (max-width: 700px) {
+	.country-block {
+		padding-top: 10px;
+	}
+}
+
 .country-title-h1 {
 	font-size: 52px;
 	line-height: 70px;
@@ -2190,7 +2200,6 @@ footer .container {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 50px 0;
 }
 .country-about-text,
 .country-about-pic {
@@ -2229,7 +2238,7 @@ footer .container {
 	}
 }
 
-/* resorts */
+
 #resorts input {
 	display: none;
 }
@@ -2435,12 +2444,15 @@ footer .container {
 		left: -40px;
 	}
 }
+
+
 #recommend {
-	padding: 50px 0;
+	overflow: hidden;
 }
 .recommend-wrap {
 	display: flex;
 	justify-content: space-between;
+	padding-bottom: 10px;
 }
 .recommend-item {
 	display: block;
@@ -2478,14 +2490,10 @@ footer .container {
 		margin-bottom: 15px;
 	}
 }
-@media (max-width: 700px) {
-	#recommend {
-		padding: 30px 0;
-	}
-}
 @media (max-width: 600px) {
 	.recommend-wrap {
 		flex-wrap: wrap;
+		padding-bottom: 0;
 	}
 	.recommend-item {
 		width: 49%;
@@ -2498,7 +2506,7 @@ footer .container {
 	}
 }
 
-#must-see p {
+#mustsee p {
 	margin: 20px 0;
 }
 .must-see-pic {
@@ -2511,7 +2519,7 @@ footer .container {
 	margin-bottom: 20px;
 }
 @media (max-width: 1199px) {
-	#must-see p {
+	#mustsee p {
 		font-size: 14px;
 		line-height: 18px;
 	}
@@ -2522,5 +2530,191 @@ footer .container {
 	}
 	.must-see-pic img {
 		width: 100%;
+	}
+}
+
+
+.excursii-wrap,
+.thalasso-wrap {
+	display: flex;
+	justify-content: space-between;
+}
+.excursii-text,
+.excursii-link,
+.thalasso-text,
+.thalasso-link {
+	width: 49%;
+}
+.excursii-text p,
+.thalasso-text p {
+	margin: 0 0 20px;
+}
+.excursii-link,
+.thalasso-link {
+	display: flex;
+	justify-content: space-between;
+}
+.excursii-link-item,
+.thalasso-link-item {
+	display: block;
+	color: #1D2D3A;
+	text-decoration: none;
+	width: 31.5%;
+	transition: .2s;
+}
+.excursii-link-item:hover,
+.thalasso-link-item:hover {
+	opacity: .6;
+}
+.excursii-link-item img,
+.thalasso-link-item img {
+	width: 100%;
+}
+.excursii-link-info,
+.thalasso-link-info {
+	border: 1px solid #0ED6C8;
+	border-radius: 5px;
+	padding: 10px 10px 5px;
+}
+.excursii-link-info h4 {
+	margin: 0 0 10px;
+	text-transform: uppercase;
+}
+.thalasso-link-info h4 {
+	margin: 0;
+	text-transform: uppercase;
+}
+.excursii-link-info span,
+.thalasso-link-info span {
+	font-size: 12px;
+}
+@media (max-width: 1199px) {
+	.excursii-text p,
+	.excursii-link-info h4,
+	.thalasso-text p,
+	.thalasso-link-info h4 {
+		font-size: 14px;
+		line-height: 18px;
+	}
+}
+@media (max-width: 800px) {
+	.excursii-wrap,
+	.thalasso-wrap {
+		flex-wrap: wrap;
+	}
+	.excursii-text,
+	.excursii-link,
+	.thalasso-text,
+	.thalasso-link {
+		width: 100%;
+	}
+	.excursii-link-info h4,
+	.thalasso-link-info h4 {
+		margin: 0;
+	}
+}
+@media (max-width: 360px) {
+	.excursii-link-info,
+	.thalasso-link-info {;
+		padding: 5px 5px 0;
+	}
+	.excursii-link-info h4,
+	.thalasso-link-info h4 {
+		font-size: 10px;
+		line-height: 14px;
+	}
+	.excursii-link-info span,
+	.thalasso-link-info span {
+		font-size: 8px;
+	}
+}
+
+
+#shopping p {
+	margin: 15px 0 20px;
+}
+#shopping h3 {
+	font-size: 24px;
+	line-height: 28px;
+	margin: 25px 0 0;
+}
+.shop-pics {
+	display: flex;
+	justify-content: space-between;
+}
+.shop-pics img {
+	width: 22%;
+}
+@media (max-width: 1199px) {
+	#shopping p {
+		font-size: 14px;
+		line-height: 18px;
+	}
+}
+@media (max-width: 600px) {
+	.shop-pics {
+		flex-wrap: wrap;
+	}
+	.shop-pics img {
+		width: 48%;
+		margin-bottom: 20px;
+	}
+}
+
+#news {
+	overflow: hidden;
+	padding-bottom: 80px;
+}
+.country-news-wrap {
+	display: flex;
+	justify-content: space-between;
+}
+.country-news-item {
+	width: 24%;
+}
+.country-news-pic {
+	display: block;
+	padding-top: 65%;
+	border-radius: 5px;
+	overflow: hidden;
+	background-size: cover;
+	background-position: 50% 50%;
+}
+.country-news-item h4 {
+	margin: 5px 0 10px;
+	font-size: 18px;
+	line-height: 24px;
+}
+.country-news-item a {
+	color: #1D2D3A;
+	text-decoration: none;
+}
+.country-news-item a:hover {
+	text-decoration: underline;
+}
+.country-news-date {
+	color: #767676;
+	font-size: 20px;
+}
+@media (max-width: 800px) {
+	#news {
+		padding-bottom: 20px;
+	}
+	.country-news-item h4 {
+		font-size: 14px;
+		line-height: 18px;
+		margin: 5px 0;
+	}
+	.country-news-date {
+		font-size: 14px;
+	}
+}
+@media (max-width: 600px) {
+	.country-news-wrap {
+		flex-wrap: wrap;
+	}
+	.country-news-item {
+		width: 48%;
+		margin-bottom: 20px;
 	}
 }
