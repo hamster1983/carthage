@@ -15,17 +15,17 @@ $(document).ready(function(){
   })*/
 
 
-  /*$('.up').on('click',function () {
+  $('.up').on('click',function () {
     $('html, body').animate({ scrollTop: 0 }, 700);
   });
   $(window).on('scroll',function(){
     if($(this).scrollTop() >= 300) {
-      $('.up').css('opacity',1);
+      $('.up').css({'opacity':1, 'z-index': 1});
     }
     else {
-      $('.up').css('opacity',0);
+      $('.up').css({'opacity':0, 'z-index': -1});
     }
-  });*/
+  });
 
   $('.navbar-toggler').on('click',function(){
     $(this).toggleClass('opened');
@@ -150,6 +150,64 @@ $(document).ready(function(){
       $('#res-main').prop('checked',true);
     }
   })
+
+
+     // меню в разделе "направление"
+    function countryNavChange() {
+      let hotelNavOffset = $('.country-nav').offset().top;
+      let width = $('.country-content').outerWidth()-30;
+      let height = $('.country-nav').outerHeight();
+
+      $(window).on('scroll',function(){
+        if($(window).scrollTop()>=hotelNavOffset) {
+          $('.country-nav').css({'position':'fixed', 'width':width});
+          $('.country-content').css('padding-top',height);
+        }
+        else {
+          $('.country-nav').css({'position':'static', 'width':'auto'});
+          $('.country-content').css('padding-top',0);
+        }
+      });
+    }
+    if($('.country-nav').length) { //вызываем функцию только на странице, где есть это меню
+      countryNavChange();
+    }
+    $(window).on('resize orientationchange', function(){
+      if($('.country-nav').length) {
+        countryNavChange();
+      }
+    });
+
+    //функция смены активного пункта меню отелей при скролле
+    function Scroll_block(){
+      let scroll_top = $(document).scrollTop();
+      let height = $('.country-nav').outerHeight();
+      $('.country-nav a').each(function(){
+        let hash = $(this).attr('href');
+        let target = $(hash);
+        if (target.position().top <= scroll_top+height && target.position().top + target.outerHeight() > scroll_top+height) {
+            $('.country-nav a').removeClass('active');
+            $(this).addClass('active');
+        } else {
+            $(this).removeClass('active');
+        }
+      });
+    }
+  
+    $(document).on('scroll', Scroll_block);
+
+    $('.country-nav a').on('click',function(e){
+      e.preventDefault();
+      $(document).off('scroll');
+      $('.country-nav a').removeClass('active');
+      $(this).addClass('active');
+      let height = $('.country-nav').outerHeight();
+      let elementClick = $(this).attr('href');
+      let destination = $(elementClick).offset().top;
+      $('html, body').animate({ scrollTop: destination-height }, 1000, function(){
+        $(document).on('scroll', Scroll_block);
+      });
+    });
 
   
 
