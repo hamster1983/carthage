@@ -209,6 +209,47 @@ $(document).ready(function(){
       });
     });
 
+
+    $('.hotel-plan').on('click',function(e){
+      e.preventDefault();
+      $('.hotel-plan-popup-wrap').addClass('open');
+    });
+    $(document).on('click', function(e){
+      let hotelPlanCloseElem = e.target;
+      if($(hotelPlanCloseElem).hasClass('hotel-plan-popup-wrap') || $(hotelPlanCloseElem).hasClass('popup-close')) {
+        $('.hotel-plan-popup-wrap').removeClass('open');
+      }
+    })
+
+
+
+    $('.hotel-infra-slider-for').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      fade: true,
+      asNavFor: '.hotel-infra-slider-nav',
+      autoplay: true,
+      autoplaySpeed: 2000,
+    });
+    $('.hotel-infra-slider-nav').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      asNavFor: '.hotel-infra-slider-for',
+      centerMode: true,
+      dots: false,
+      arrows: false,
+      focusOnSelect: true,
+      responsive: [
+        {
+          breakpoint: 500,
+          settings: {
+            centerMode: false
+          }
+        }
+      ]
+    });
+
   
 
 });
