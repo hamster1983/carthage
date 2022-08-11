@@ -3073,3 +3073,334 @@ footer .container {
 		margin: 0 -5px;
 	}
 }
+
+section.food,
+section.spa {
+	padding-top: 30px;
+}
+.food [type="radio"],
+.spa [type="radio"] {
+	display: none;
+}
+.food-slider-wrap,
+.spa-slider-wrap {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 15px;
+}
+.food-slider-nav,
+.food-slider-for,
+.spa-slider-nav,
+.spa-slider-for {
+	width: 49%;
+}
+.food-slider-for,
+.spa-slider-for {
+	border-radius: 5px;
+	overflow: hidden;
+}
+.food-slider-for img,
+.spa-slider-for img {
+	display: none;
+	max-width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+#food-slide-1:checked ~ .food-slider-for img.food-slide-1,
+#food-slide-2:checked ~ .food-slider-for img.food-slide-2,
+#food-slide-3:checked ~ .food-slider-for img.food-slide-3,
+#food-slide-4:checked ~ .food-slider-for img.food-slide-4,
+#food-slide-5:checked ~ .food-slider-for img.food-slide-5,
+#food-slide-6:checked ~ .food-slider-for img.food-slide-6,
+#food-slide-7:checked ~ .food-slider-for img.food-slide-7,
+#food-slide-8:checked ~ .food-slider-for img.food-slide-8,
+#food-slide-9:checked ~ .food-slider-for img.food-slide-9,
+#spa-slide-1:checked ~ .spa-slider-for img.spa-slide-1,
+#spa-slide-2:checked ~ .spa-slider-for img.spa-slide-2,
+#spa-slide-3:checked ~ .spa-slider-for img.spa-slide-3,
+#spa-slide-4:checked ~ .spa-slider-for img.spa-slide-4,
+#spa-slide-5:checked ~ .spa-slider-for img.spa-slide-5,
+#spa-slide-6:checked ~ .spa-slider-for img.spa-slide-6,
+#spa-slide-7:checked ~ .spa-slider-for img.spa-slide-7,
+#spa-slide-8:checked ~ .spa-slider-for img.spa-slide-8,
+#spa-slide-9:checked ~ .spa-slider-for img.spa-slide-9 {
+	display: block;
+	animation: opacity 1s linear forwards;
+}
+.food-slider-nav,
+.spa-slider-nav {
+	display: grid;
+	gap: 15px;
+	grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+}
+.food-slider-nav img,
+.spa-slider-nav img {
+	display: block;
+	max-width: 100%;
+	cursor: pointer;
+	opacity: .4;
+	transition: .2s;
+}
+#food-slide-1:checked ~ .food-slider-nav [for="food-slide-1"] img,
+#food-slide-2:checked ~ .food-slider-nav [for="food-slide-2"] img,
+#food-slide-3:checked ~ .food-slider-nav [for="food-slide-3"] img,
+#food-slide-4:checked ~ .food-slider-nav [for="food-slide-4"] img,
+#food-slide-5:checked ~ .food-slider-nav [for="food-slide-5"] img,
+#food-slide-6:checked ~ .food-slider-nav [for="food-slide-6"] img,
+#food-slide-7:checked ~ .food-slider-nav [for="food-slide-7"] img,
+#food-slide-8:checked ~ .food-slider-nav [for="food-slide-8"] img,
+#food-slide-9:checked ~ .food-slider-nav [for="food-slide-9"] img,
+#spa-slide-1:checked ~ .spa-slider-nav [for="spa-slide-1"] img,
+#spa-slide-2:checked ~ .spa-slider-nav [for="spa-slide-2"] img,
+#spa-slide-3:checked ~ .spa-slider-nav [for="spa-slide-3"] img,
+#spa-slide-4:checked ~ .spa-slider-nav [for="spa-slide-4"] img,
+#spa-slide-5:checked ~ .spa-slider-nav [for="spa-slide-5"] img,
+#spa-slide-6:checked ~ .spa-slider-nav [for="spa-slide-6"] img,
+#spa-slide-7:checked ~ .spa-slider-nav [for="spa-slide-7"] img,
+#spa-slide-8:checked ~ .spa-slider-nav [for="spa-slide-8"] img,
+#spa-slide-9:checked ~ .spa-slider-nav [for="spa-slide-9"] img {
+	opacity: 1;
+}
+@keyframes opacity {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+@media (max-width: 900px) {
+	.food-slider-wrap,
+	.spa-slider-wrap {
+		flex-wrap: wrap;
+	}
+	.food-slider-nav,
+	.food-slider-for,
+	.spa-slider-nav,
+	.spa-slider-for {
+		width: 100%;
+	}
+	.food-slider-nav,
+	.spa-slider-nav {
+		padding-top: 10px;
+		gap: 10px;
+	}
+}
+
+.rooms {
+	padding-top: 30px;
+}
+.rooms h4 {
+	font-size: 24px;
+	line-height: 28px;
+	margin: 10px 0;
+}
+.rooms p {
+	margin: 0 0 20px;
+}
+.rooms-main-wrap {
+	display: flex;
+	justify-content: space-between;
+}
+.rooms-main-info,
+.rooms-main-pic {
+	width: 49%;
+}
+.rooms-main-pic img {
+	display: block;
+	max-width: 100%;
+	border-radius: 5px;
+	margin: 0 auto;
+}
+@media (max-width: 1199px) {
+	.rooms p {
+		font-size: 14px;
+		line-height: 18px;
+	}
+}
+@media (max-width: 900px) {
+	.rooms-main-wrap {
+		flex-wrap: wrap;
+	}
+	.rooms-main-info,
+	.rooms-main-pic {
+		width: 100%;
+	}
+}
+
+.dop {
+	padding-top: 30px;
+}
+.dop h3 {
+	font-size: 30px;
+	line-height: 35px;
+	margin: 0 0 20px;
+}
+.dop-change {
+	background-color: rgba(14, 214, 200, 0.07);
+	border-radius: 5px;
+	padding: 40px;
+	margin: 50px 0;
+}
+.dop-achtung {
+	float: left;
+	margin: 10px 40px 15px 0;
+}
+@media (max-width: 1199px) {
+	.dop-change {
+		padding: 20px;
+	}
+	.dop-change p {
+		font-size: 14px;
+		line-height: 18px;
+	}
+	.dop-achtung {
+		margin: 0 20px 10px 0;
+	}
+}
+@media (max-width: 380px) {
+	.dop-achtung {
+		float: none;
+		display: block;
+		margin: 0 auto 20px;
+	}
+}
+
+.tur-nalog {
+	margin: 50px 0;
+}
+.tur-nalog-wrap {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.tur-nalog-item {
+	width: 49%;
+}
+.tur-nalog-item p {
+	padding-left: 10px;
+	border-left: 2px solid #0ED6C8;
+}
+@media (max-width: 1199px) {
+	.tur-nalog-item p {
+		font-size: 14px;
+		line-height: 18px;
+	}
+}
+@media (max-width: 600px) {
+	.tur-nalog-item {
+		width: 100%;
+	}
+}
+
+.dop-covid {
+	border: 2px solid #9A1515;
+	border-radius: 5px;
+	padding: 40px 50px;
+	margin: 50px 0;
+}
+@media (max-width: 1199px) {
+	.dop-covid {
+		padding: 20px;
+	}
+	.dop-covid p {
+		font-size: 14px;
+		line-height: 18px;
+	}
+}
+
+.dop-resort {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+}
+.dop-resort-info {
+	border: 1px solid #0ED6C8;
+	border-radius: 5px;
+	width: 800px;
+	display: flex;
+	padding-right: 10px;
+	overflow: hidden;
+}
+.dop-resort-info img {
+	display: block;
+	align-self: flex-start;
+	margin-right: 20px;
+	width: 265px;
+}
+.dop-resort-info h4 {
+	font-size: 24px;
+	line-height: 28px;
+	margin: 20px 0 15px;
+}
+.dop-resort-links {
+	border: 1px solid #0ED6C8;
+	border-radius: 5px;
+	width: 625px;
+	padding: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+.dop-resort-links-small {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.dop-resort-links-small a {
+	color: #000;
+	text-decoration: none;
+	margin: 0 15px 25px;
+}
+.dop-resort-links-small a:hover {
+	text-decoration: underline;
+}
+.dop-resort-links-big {
+	display: block;
+	width: 350px;
+	padding: 15px;
+	background-color: #0ED6C8;
+	border-radius: 3px;
+	color: #fff;
+	font-size: 28px;
+	line-height: 36px;
+	text-decoration: none;
+	text-align: center;
+	transition: .2s;
+}
+.dop-resort-links-big:hover {
+	opacity: .7;
+}
+@media (max-width: 1199px) {
+	.dop-resort {
+		font-size: 14px;
+		line-height: 18px;
+	}
+	.dop-resort-info {
+		width: 900px;
+	}
+	.dop-resort-links {
+		width: 525px;
+	}
+}
+@media (max-width: 1000px) {
+	.dop-resort {
+		flex-wrap: wrap;
+	}
+	.dop-resort-info,
+	.dop-resort-links {
+		width: 100%;
+	}
+}
+@media (max-width: 600px) {
+	.dop-resort-info {
+		flex-wrap: wrap;
+		padding: 15px;
+	}
+	.dop-resort-info img {
+		margin: auto;
+	}
+	.dop-resort-links-big {
+		width: 250px;
+		padding: 10px;
+		font-size: 16px;
+		line-height: 22px;
+	}
+}

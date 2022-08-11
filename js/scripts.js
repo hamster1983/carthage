@@ -229,7 +229,7 @@ $(document).ready(function(){
       arrows: false,
       fade: true,
       asNavFor: '.hotel-infra-slider-nav',
-      autoplay: true,
+      autoplay: false,
       autoplaySpeed: 2000,
     });
     $('.hotel-infra-slider-nav').slick({
