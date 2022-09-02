@@ -250,6 +250,12 @@ $(document).ready(function(){
       ]
     });
 
+
+    $('.all-hotels-filter-mob').on('click',function(){
+      $('.all-hotels-filter-wrap').toggleClass('open');
+      $('.all-hotels-filter-mob img').toggleClass('visible');
+    })
+
   
 
 });

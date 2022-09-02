@@ -2193,6 +2193,7 @@ footer .container {
 .country-title-h1 {
 	font-size: 52px;
 	line-height: 70px;
+	margin-top: 20px;
 }
 .country-title-h2 {
 	font-size: 40px;
@@ -2294,6 +2295,7 @@ footer .container {
 .resorts-label-wrap label:hover {
 	color: #0ED6C8;
 }
+/* Tunisia */
 #res-bizerta:checked ~ .resorts-content label[for="res-bizerta"],
 #res-tabarka:checked ~ .resorts-content label[for="res-tabarka"],
 #res-gammart:checked ~ .resorts-content label[for="res-gammart"],
@@ -2306,12 +2308,25 @@ footer .container {
 #res-mahdia:checked ~ .resorts-content label[for="res-mahdia"],
 #res-djerba:checked ~ .resorts-content label[for="res-djerba"],
 #res-tozer:checked ~ .resorts-content label[for="res-tozer"],
-#res-duz:checked ~ .resorts-content label[for="res-duz"] {
+#res-duz:checked ~ .resorts-content label[for="res-duz"],
+/* Egypt */
+#res-aleksandria:checked ~ .resorts-content label[for="res-aleksandria"],
+#res-portsaid:checked ~ .resorts-content label[for="res-portsaid"],
+#res-kair:checked ~ .resorts-content label[for="res-kair"],
+#res-nuveiba:checked ~ .resorts-content label[for="res-nuveiba"],
+#res-dahab:checked ~ .resorts-content label[for="res-dahab"],
+#res-sharm:checked ~ .resorts-content label[for="res-sharm"],
+#res-hurgada:checked ~ .resorts-content label[for="res-hurgada"],
+#res-luksor:checked ~ .resorts-content label[for="res-luksor"],
+#res-marsa:checked ~ .resorts-content label[for="res-marsa"],
+#res-asuan:checked ~ .resorts-content label[for="res-asuan"],
+#res-abusimbel:checked ~ .resorts-content label[for="res-abusimbel"] {
 	color: #0ED6C8;
 	font-size: 14px;
 	line-height: 19px;
 	font-weight: bold;
 }
+/* Tunisia */
 .resorts-label-wrap label[for="res-bizerta"] {
 	top: -13px;
 	left: 170px;
@@ -2416,6 +2431,96 @@ footer .container {
 	top: 282px;
 	left: 130px;
 }
+/* Egypt */
+.resorts-label-wrap label[for="res-aleksandria"] {
+	top: 30px;
+	left: 70px;
+}
+#res-aleksandria:checked ~ .resorts-content label[for="res-aleksandria"] {
+	top: 20px;
+	left: 60px;
+}
+.resorts-label-wrap label[for="res-portsaid"] {
+	top: 10px;
+	right: 75px;
+}
+#res-portsaid:checked ~ .resorts-content label[for="res-portsaid"] {
+	top: 5px;
+	right: 55px;
+}
+.resorts-label-wrap label[for="res-kair"] {
+	top: 65px;
+	right: 120px;
+}
+#res-kair:checked ~ .resorts-content label[for="res-kair"] {
+	top: 60px;
+	right: 110px;
+}
+.resorts-label-wrap label[for="res-nuveiba"] {
+	top: 85px;
+	right: 55px;
+}
+#res-nuveiba:checked ~ .resorts-content label[for="res-nuveiba"] {
+	top: 82px;
+	right: 58px;
+}
+.resorts-label-wrap label[for="res-dahab"] {
+	top: 112px;
+	right: 60px;
+}
+#res-dahab:checked ~ .resorts-content label[for="res-dahab"] {
+	top: 107px;
+	right: 60px;
+}
+.resorts-label-wrap label[for="res-sharm"] {
+	top: 135px;
+	right: 80px;
+}
+#res-sharm:checked ~ .resorts-content label[for="res-sharm"] {
+	top: 130px;
+	right: 80px;
+}
+.resorts-label-wrap label[for="res-hurgada"] {
+	top: 218px;
+	right: 92px;
+}
+#res-hurgada:checked ~ .resorts-content label[for="res-hurgada"] {
+	top: 213px;
+	right: 92px;
+}
+.resorts-label-wrap label[for="res-luksor"] {
+	top: 277px;
+	left: 117px;
+}
+#res-luksor:checked ~ .resorts-content label[for="res-luksor"] {
+	top: 272px;
+	left: 108px;
+}
+.resorts-label-wrap label[for="res-marsa"] {
+	top: 337px;
+	right: 60px;
+}
+#res-marsa:checked ~ .resorts-content label[for="res-marsa"] {
+	top: 333px;
+	right: 60px;
+}
+.resorts-label-wrap label[for="res-asuan"] {
+	top: 368px;
+	right: 82px;
+}
+#res-asuan:checked ~ .resorts-content label[for="res-asuan"] {
+	top: 365px;
+	right: 70px;
+}
+.resorts-label-wrap label[for="res-abusimbel"] {
+	top: 430px;
+	right: 158px;
+}
+#res-abusimbel:checked ~ .resorts-content label[for="res-abusimbel"] {
+	top: 425px;
+	right: 158px;
+}
+/* Tunisia */
 #res-main:checked ~ .resorts-content .resorts-text-main,
 #res-bizerta:checked ~ .resorts-content .resorts-text-bizerta,
 #res-tabarka:checked ~ .resorts-content .resorts-text-tabarka,
@@ -2429,7 +2534,19 @@ footer .container {
 #res-mahdia:checked ~ .resorts-content .resorts-text-mahdia,
 #res-djerba:checked ~ .resorts-content .resorts-text-djerba,
 #res-tozer:checked ~ .resorts-content .resorts-text-tozer,
-#res-duz:checked ~ .resorts-content .resorts-text-duz {
+#res-duz:checked ~ .resorts-content .resorts-text-duz,
+/* Egypt */
+#res-aleksandria:checked ~ .resorts-content .resorts-text-aleksandria,
+#res-portsaid:checked ~ .resorts-content .resorts-text-portsaid,
+#res-kair:checked ~ .resorts-content .resorts-text-kair,
+#res-nuveiba:checked ~ .resorts-content .resorts-text-nuveiba,
+#res-dahab:checked ~ .resorts-content .resorts-text-dahab,
+#res-sharm:checked ~ .resorts-content .resorts-text-sharm,
+#res-hurgada:checked ~ .resorts-content .resorts-text-hurgada,
+#res-luksor:checked ~ .resorts-content .resorts-text-luksor,
+#res-marsa:checked ~ .resorts-content .resorts-text-marsa,
+#res-asuan:checked ~ .resorts-content .resorts-text-asuan,
+#res-abusimbel:checked ~ .resorts-content .resorts-text-abusimbel {
 	display: block;
 	animation: opacity 1s linear forwards;
 }
@@ -2543,7 +2660,7 @@ footer .container {
 }
 .must-see-pic img {
 	display: block;
-	width: 49.2%;
+	width: 24%;
 	margin-bottom: 20px;
 }
 @media (max-width: 1199px) {
@@ -2557,7 +2674,7 @@ footer .container {
 		flex-wrap: wrap;
 	}
 	.must-see-pic img {
-		width: 100%;
+		width: 49%;
 	}
 }
 
@@ -2589,6 +2706,12 @@ footer .container {
 	text-decoration: none;
 	width: 31.5%;
 	transition: .2s;
+}
+.excursii-pic,
+.thalasso-pic {
+	display: block;
+	width: 31.5%;
+	align-self: flex-start;
 }
 .excursii-link-item:hover,
 .thalasso-link-item:hover {
@@ -2671,7 +2794,7 @@ footer .container {
 	justify-content: space-between;
 }
 .shop-pics img {
-	width: 22%;
+	width: 24%;
 }
 @media (max-width: 1199px) {
 	#shopping p {
@@ -3402,5 +3525,217 @@ section.spa {
 		padding: 10px;
 		font-size: 16px;
 		line-height: 22px;
+	}
+}
+
+/* all hotels */
+.all-hotels-content {
+	display: flex;
+	position: relative;
+	justify-content: space-between;
+	gap: 15px;
+}
+.all-hotels-filter-wrap {
+	border: 1px solid #D8D8D8;
+	border-radius: 5px;
+	padding: 20px;
+	width: 345px;
+	align-self: flex-start;
+	background-color: #fff;
+}
+.all-hotels-filter-mob {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	padding: 5px;
+	text-align: center;
+	cursor: pointer;
+	display: none;
+	background-color: #f2f2f2;
+}
+.all-hotels-filter-mob img {
+	width: 20px;
+	display: none;
+	margin-bottom: 3px;
+}
+.all-hotels-filter-mob img.visible {
+	display: inline;
+}
+.all-hotels-filter-wrap h4 {
+	margin: 5px 0 10px;
+}
+.all-hotels-filter-wrap span {
+	position: absolute;
+	right: 0;
+	font-size: 14px;
+	line-height: 18px;
+	font-weight: bold;
+}
+.all-hotels-filter-wrap [type="checkbox"] {
+	display: none;
+}
+.all-hotels-filter-wrap label {
+	cursor: pointer;
+	font-size: 14px;
+	line-height: 18px;
+	user-select: none;
+	display: block;
+	position: relative;
+	margin-bottom: 10px;
+	padding-left: 25px;
+}
+.all-hotels-filter-wrap label:before {
+	content: '';
+	display: block;
+	width: 18px;
+	height: 18px;
+	border: 1px solid #D8D8D8;
+	position: absolute;
+	left: 0;
+	top: -2px;
+}
+.all-hotels-filter-wrap label:after {
+	content: '';
+	display: none;
+	width: 14px;
+	height: 6px;
+	border-left: 1px solid #0ED6C8;
+	border-bottom: 1px solid #0ED6C8;
+	position: absolute;
+	left: 3px;
+	top: 2px;
+	transform: rotate(-45deg);
+}
+.all-hotels-filter-wrap [type="checkbox"]:checked + label:after {
+	display: block;
+}
+.all-hotels-list {
+	width: 1075px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.all-hotels-item {
+	display: flex;
+	width: 49%;
+	border: 1px solid #D8D8D8;
+	border-radius: 5px;
+	text-decoration: none;
+	color: #1D2D3A;
+	margin-bottom: 20px;
+	transition: .2s;
+	position: relative;
+}
+.all-hotels-item:hover {
+	opacity: .5;
+}
+.all-hotels-pic {
+	display: block;
+	border-radius: 5px;
+	height: 100%;
+	width: 45%;
+	object-fit: cover;
+}
+.all-hotels-text {
+	padding: 5px 10px 30px 20px;
+}
+.stars-resort-wrap {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	align-items: center;
+}
+.all-hotels-stars {
+	padding: 5px 5px 5px 0;
+}
+.all-hotels-resort {
+	text-transform: uppercase;
+	display: flex;
+	align-items: center;
+	font-size: 14px;
+	line-height: 16px;
+}
+.all-hotels-resort img {
+	margin-right: 5px;
+}
+.all-hotels-title {
+	font-size: 18px;
+	line-height: 24px;
+	margin: 5px 0 10px;
+}
+.all-hotels-char {
+	font-size: 12px;
+	line-height: 16px;
+}
+.all-hotels-arr {
+	width: 60px;
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+}
+@media (max-width: 1199px) {
+	.all-hotels-filter-wrap {
+		padding: 10px;
+	}
+	.all-hotels-text {
+	    padding: 0 10px 30px 15px;
+	}
+	.all-hotels-stars img {
+		width: 12px;
+	}
+	.all-hotels-resort {
+		font-size: 12px;
+		line-height: 14px;
+	}
+	.all-hotels-resort img {
+		width: 10px;
+	}
+	.all-hotels-title {
+		font-size: 14px;
+		line-height: 18px;
+	}
+	.all-hotels-char {
+	    font-size: 10px;
+	    line-height: 12px;
+	}
+	.all-hotels-arr {
+	    width: 45px;
+	}
+}
+@media (max-width: 900px) {
+	.all-hotels-content {
+		display: block;
+	}
+	.all-hotels-list {
+		width: 100%;
+	}
+	.all-hotels-filter-wrap {
+		position: absolute;
+		width: 100%;
+		max-width: 400px;
+		padding: 15px 50px 15px 15px;
+		transform: translateX(calc(-100% + 15px));
+		z-index: 2;
+		transition: .3s;
+		min-height: 210px;
+	}
+	.all-hotels-filter-mob {
+		display: block;
+	}
+	.all-hotels-filter-wrap.open {
+		transform: translateX(0);
+	}
+}
+@media (max-width: 700px) {
+	.all-hotels-item {
+		display: block;
+	}
+	.all-hotels-pic,
+	.all-hotels-text {
+		width: 100%;
+	}
+	.all-hotels-pic {
+		height: 150px;
 	}
 }
