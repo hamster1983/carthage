@@ -251,11 +251,35 @@ $(document).ready(function(){
     });
 
 
+    $('.resort-must-see-slider').slick({
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      arrows: true,
+      dots: false,
+      autoplay: false,
+      autoplaySpeed: 2000,
+      responsive: [
+        {
+          breakpoint: 750,
+          settings: {
+            slidesToShow: 1
+          }
+        }
+      ]
+    });
+
+
     $('.all-hotels-filter-mob').on('click',function(){
       $('.all-hotels-filter-wrap').toggleClass('open');
       $('.all-hotels-filter-mob img').toggleClass('visible');
     })
 
+
+    $('.resort-region-gallery img').on('click',function(){
+      let src = $(this).attr('src');
+      $(this).nextAll('.hotel-plan-popup-wrap').find('.hotel-plan-pic').attr('src',src);
+      $('.hotel-plan-popup-wrap').addClass('open');
+    })
   
 
 });
