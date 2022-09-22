@@ -251,6 +251,12 @@ $(document).ready(function(){
     });
 
 
+    $('.all-hotels-filter-mob').on('click',function(){
+      $('.all-hotels-filter-wrap').toggleClass('open');
+      $('.all-hotels-filter-mob img').toggleClass('visible');
+    })
+
+
     $('.resort-must-see-slider').slick({
       slidesToShow: 2,
       slidesToScroll: 1,
@@ -267,12 +273,6 @@ $(document).ready(function(){
         }
       ]
     });
-
-
-    $('.all-hotels-filter-mob').on('click',function(){
-      $('.all-hotels-filter-wrap').toggleClass('open');
-      $('.all-hotels-filter-mob img').toggleClass('visible');
-    })
 
 
     $('.resort-region-gallery img').on('click',function(){
